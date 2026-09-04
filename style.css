@@ -64,33 +64,85 @@ html:not(.js) .splash { display: none; }
 
 .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
-/* ---------- Buttons ---------- */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  padding: 1em 2em; font-size: 15px; white-space: nowrap;
-  border: 1px solid #000; border-radius: 10em; font-weight: 600; letter-spacing: .3px;
-  transition: all .3s ease-in-out; cursor: pointer; position: relative;
-  box-shadow: 0 0 0 0 #000;
+/* ---------- Buttons (Uiverse e-coders skew fill) ---------- */
+.btn,
+button.btn,
+a.btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid #18181a;
+  color: #18181a;
+  font-size: 15px; line-height: 15px;
+  padding: 18px 18px 17px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  text-align: center;
 }
-.btn--lg { padding: 1.1em 2.4em; font-size: 16px; }
-.btn--sm { padding: .6em 1.4em; font-size: 14px; }
-.btn--gold { background: var(--gold); color: #000; }
-.btn--gold:hover { background: var(--gold-dark); color: #fff; transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 #000; }
-.btn--gold:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 #000; }
-.btn--ghost { background: #fff; color: #000; border: 1px solid #000; }
-.btn--ghost:hover { background: var(--gold); transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 #000; }
-.btn--ghost:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 #000; }
-.btn--outline { background: #fff; color: #000; border: 1px solid #000; }
-.btn--outline:hover { background: var(--ink); color: #fff; transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 #000; }
-.btn--outline:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 #000; }
+.btn--lg { padding: 22px 26px 21px; font-size: 17px; line-height: 17px; }
+.btn--sm { padding: 12px 14px 11px; font-size: 13px; line-height: 13px; }
+
+.btn span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+.btn span:last-child {
+  color: #fff;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%; left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px; line-height: 13px;
+  white-space: nowrap;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.btn:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+.btn:hover span:first-child { color: #fff; }
+.btn:hover span:last-child {
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+/* Nav actions keep a subtle, non-filled look */
+.nav__actions .btn:after { display: none; }
+.nav__actions .btn span:last-child { display: none; }
+.nav__actions .btn:hover span:first-child { color: #18181a; }
+
+/* Submit buttons that are still raw <input> keep base styling (no spans) */
 input[type="submit"], input[type="button"] {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  padding: 1em 2em; font-size: 15px; white-space: nowrap;
-  border: 1px solid #000; border-radius: 10em; font-weight: 600; letter-spacing: .3px;
-  transition: all .3s ease-in-out; cursor: pointer; background: var(--gold); color: #000; box-shadow: 0 0 0 0 #000;
+  position: relative; overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid #18181a; color: #18181a;
+  font-size: 15px; line-height: 15px; padding: 18px 18px 17px;
+  cursor: pointer; background: #fff;
 }
-input[type="submit"]:hover, input[type="button"]:hover { transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 #000; }
-input[type="submit"]:active, input[type="button"]:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 #000; }
 
 /* ---------- Nav ---------- */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 0; transition: all .35s ease; }
@@ -313,11 +365,8 @@ input[type="submit"]:active, input[type="button"]:active { transform: translateY
 .cta__inner p { color: rgba(11,24,41,.7); font-size: 18px; margin-bottom: 32px; }
 .cta__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .cta .btn--gold { background: var(--ink); color: #fff; }
-.cta .btn--gold:hover { background: #06101e; transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 #000; }
-.cta .btn--gold:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 #000; }
+.cta .btn--gold span:first-child { color: #fff; }
 .cta .btn--outline { border-color: #000; color: #000; }
-.cta .btn--outline:hover { background: var(--ink); color: #fff; transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 #000; }
-.cta .btn--outline:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 #000; }
 
 /* ---------- Footer ---------- */
 .footer {
@@ -343,8 +392,8 @@ input[type="submit"]:active, input[type="button"]:active { transform: translateY
 .footer__form input::placeholder { color: rgba(255,255,255,.4); }
 .footer__form input:focus { border-color: var(--gold); }
 .footer__form .btn--sm { background: var(--gold); color: var(--ink); border-color: var(--gold-dark); }
-.footer__form .btn--sm:hover { background: var(--gold-dark); color: #fff; transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 var(--gold-dark); }
-.footer__form .btn--sm:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 var(--gold-dark); }
+.footer__form .btn--sm span:first-child { color: var(--ink); }
+.footer__form .btn--sm:hover span:first-child { color: #fff; }
 .footer__bottom { border-top: 1px solid rgba(255,255,255,.1); margin-top: 60px; padding-top: 26px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 13px; color: rgba(255,255,255,.45); }
 
 /* ---------- Reveal animation ---------- */
@@ -352,10 +401,9 @@ input[type="submit"]:active, input[type="button"]:active { transform: translateY
 .reveal.visible { opacity: 1; transform: none; }
 
 /* ---------- Nav login state ---------- */
-.nav-login .user-email { display: none; }
-body.logged-in .nav-login { display: inline-flex; align-items: center; gap: 6px; }
-body.logged-in .nav-login .user-email { display: inline; max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-body.logged-in .nav-login::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #2f9e6a; }
+body.logged-in .nav-login { position: relative; background: rgba(255,255,255,.12); }
+body.logged-in .nav-login span:first-child { color: #fff; }
+body.logged-in .nav-login::before { content: ""; position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; border-radius: 50%; background: #2f9e6a; }
 
 /* ---------- Calculator ---------- */
 .calc { background: var(--cream-2); }

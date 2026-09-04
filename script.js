@@ -4,6 +4,22 @@
 
   document.addEventListener('DOMContentLoaded', function () {
 
+    // ---------- Button label wrap (e-coders two-span effect) ----------
+    function wrapButtons(scope) {
+      (scope || document).querySelectorAll('.btn').forEach(function (b) {
+        if (b.dataset.wrapped) return;
+        var label = b.textContent.replace(/\s+/g, ' ').trim();
+        if (!label) return;
+        b.dataset.wrapped = '1';
+        b.innerHTML = '<span>' + label + '</span><span>' + label + '</span>';
+      });
+    }
+    wrapButtons();
+    var btnObserver = new MutationObserver(function (muts) {
+      muts.forEach(function (m) { if (m.type === 'childList' && m.addedNodes.length) wrapButtons(m.target); });
+    });
+    btnObserver.observe(document.body, { childList: true, subtree: true });
+
     // ---------- Splashscreen hide ----------
     function hideSplash() {
       var s = document.getElementById('splash');
@@ -24,7 +40,7 @@
 
     // ---------- Mobile nav ----------
     var navToggle = document.getElementById('navToggle');
-    if (navToggle) {
+    if (navToggle && nav) {
       navToggle.addEventListener('click', function () {
         var open = nav.classList.toggle('open');
         navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -44,14 +60,26 @@
       document.body.classList.add('logged-in');
       var loginBtn = document.getElementById('navLogin');
       if (loginBtn) {
-        var email = document.createElement('span');
-        email.className = 'user-email';
-        email.textContent = sessionUser.email;
-        loginBtn.appendChild(email);
+        var shortName = (sessionUser.name || sessionUser.email || 'Me').split(' ')[0];
+        var firstSpan = loginBtn.querySelector('span');
+        if (firstSpan) {
+          firstSpan.textContent = shortName;
+          var lastSpan = loginBtn.querySelector('span:last-child');
+          if (lastSpan) lastSpan.textContent = shortName;
+          loginBtn.classList.add('user-email-logged');
+        }
         loginBtn.href = 'dashboard.html';
       }
       var signupBtn = document.getElementById('navSignup');
-      if (signupBtn) { signupBtn.textContent = 'Dashboard'; signupBtn.href = 'dashboard.html'; }
+      if (signupBtn) {
+        var sFirst = signupBtn.querySelector('span');
+        if (sFirst) {
+          sFirst.textContent = 'Dashboard';
+          var sLast = signupBtn.querySelector('span:last-child');
+          if (sLast) sLast.textContent = 'Dashboard';
+        } else { signupBtn.textContent = 'Dashboard'; }
+        signupBtn.href = 'dashboard.html';
+      }
     }
 
     // ---------- Animated counters ----------
