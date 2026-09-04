@@ -4,6 +4,14 @@
 
   document.addEventListener('DOMContentLoaded', function () {
 
+    // ---------- Splashscreen hide ----------
+    function hideSplash() {
+      var s = document.getElementById('splash');
+      if (s && !s.classList.contains('hide')) s.classList.add('hide');
+    }
+    window.addEventListener('load', hideSplash);
+    setTimeout(hideSplash, 3500); // fallback so the splash never blocks
+
     // ---------- Sticky nav ----------
     var nav = document.getElementById('nav');
     function onScroll() {

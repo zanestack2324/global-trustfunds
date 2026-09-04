@@ -34,23 +34,82 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 button { font-family: inherit; cursor: pointer; }
 
+/* ---------- Splashscreen ---------- */
+.splash { position: fixed; inset: 0; z-index: 9999; background: var(--ink); display: flex; align-items: center; justify-content: center; opacity: 1; visibility: visible; transition: opacity .5s ease, visibility .5s ease; }
+.splash.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+html:not(.js) .splash { display: none; }
+.splash__inner { text-align: center; }
+.splash__logo { display: block; margin: 0 auto 28px; width: 72px; height: 72px; border-radius: 16px; box-shadow: 0 0 40px rgba(201,162,75,.25); }
+.splash__brand { display: block; font-family: var(--font-serif); color: #fff; font-size: 22px; font-weight: 700; letter-spacing: .3px; margin-bottom: 26px; }
+.splash__brand em { font-style: normal; color: var(--gold-light); }
+.loader {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  background: radial-gradient(circle closest-side,#000 94%,#0000) right/calc(200% - 1em) 100%;
+  animation: l24 1s infinite alternate linear;
+}
+.loader::before {
+  content: "Loading...";
+  line-height: 1em;
+  color: #0000;
+  background: inherit;
+  background-image: radial-gradient(circle closest-side,#fff 94%,#000);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+@keyframes l24 { 100% { background-position: left } }
+
 .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
-/* ---------- Buttons ---------- */
+/* ---------- Buttons (Uiverse press-style) ---------- */
+.btn,
+button:not(.faq__q):not(.nav__toggle),
+input[type="submit"],
+input[type="button"] {
+  --bg: #e74c3c;
+  --text-color: #fff;
+  --edge: #c0392b;
+  position: relative;
+  top: 0;
+  border: none;
+  background: var(--bg);
+  color: var(--text-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.2s;
+  border-radius: 5px;
+  opacity: 0.8;
+  cursor: pointer;
+  box-shadow: var(--edge) 0px 7px 2px, #000 0px 8px 5px;
+}
+.btn:hover,
+button:not(.faq__q):not(.nav__toggle):hover,
+input[type="submit"]:hover,
+input[type="button"]:hover { opacity: 1; }
+.btn:active,
+button:not(.faq__q):not(.nav__toggle):active,
+input[type="submit"]:active,
+input[type="button"]:active {
+  top: 4px;
+  box-shadow: var(--edge) 0px 3px 2px, #000 0px 3px 5px;
+}
+/* layout for buttons (links styled as buttons) */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  font-weight: 600; font-size: 15px; border-radius: 999px;
-  padding: 12px 26px; transition: all .25s ease; border: 1.5px solid transparent;
-  white-space: nowrap;
+  padding: 12px 26px; font-size: 15px; white-space: nowrap;
 }
-.btn--gold { background: linear-gradient(135deg, var(--gold-light), var(--gold) 60%, var(--gold-dark)); color: #14100a; box-shadow: 0 10px 24px -8px rgba(201,162,75,.55); }
-.btn--gold:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -8px rgba(201,162,75,.65); }
-.btn--ghost { background: transparent; border-color: rgba(255,255,255,.35); color: #fff; }
-.btn--ghost:hover { border-color: var(--gold-light); color: var(--gold-light); }
-.btn--outline { background: transparent; border-color: var(--gold); color: var(--gold-dark); }
-.btn--outline:hover { background: var(--gold); color: #14100a; }
 .btn--lg { padding: 15px 34px; font-size: 16px; }
 .btn--sm { padding: 9px 20px; font-size: 14px; }
+
+/* accent variants keep the same press design */
+.btn--gold   { --bg: #e74c3c; --edge: #c0392b; --text-color: #fff; }
+.btn--ghost  { --bg: rgba(231,76,60,.16); --edge: rgba(231,76,60,.55); --text-color: #fff; }
+.btn--outline { --bg: rgba(231,76,60,.14); --edge: #e74c3c; --text-color: #ffd9d4; }
+.btn--gold:hover, .btn--ghost:hover, .btn--outline:hover { opacity: 1; }
+
 
 /* ---------- Nav ---------- */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 0; transition: all .3s ease; }
@@ -256,9 +315,7 @@ button { font-family: inherit; cursor: pointer; }
 .cta__inner h2 { font-family: var(--font-serif); color: #1a1206; font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
 .cta__inner p { color: rgba(26,18,6,.8); font-size: 18px; margin-bottom: 32px; }
 .cta__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.cta .btn--gold { background: var(--ink); color: var(--gold-light); box-shadow: 0 14px 30px -10px rgba(14,28,22,.6); }
-.cta .btn--outline { border-color: var(--ink); color: var(--ink); }
-.cta .btn--outline:hover { background: var(--ink); color: var(--gold-light); }
+.cta .btn--gold { --bg: #e74c3c; --edge: #941f13; --text-color: #fff; }
 
 /* ---------- Footer ---------- */
 .footer { background: #0a140f; color: rgba(255,255,255,.7); padding: 80px 0 30px; }
@@ -276,7 +333,7 @@ button { font-family: inherit; cursor: pointer; }
 .footer__form input { flex: 1; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: #fff; padding: 11px 16px; border-radius: 999px; font-size: 14px; outline: none; }
 .footer__form input::placeholder { color: rgba(255,255,255,.4); }
 .footer__form input:focus { border-color: var(--gold); }
-.footer__form .btn--gold { background: #fff; color: var(--ink); }
+.footer__form .btn--gold { --bg: #e74c3c; --edge: #941f13; --text-color: #fff; }
 .footer__bottom { border-top: 1px solid rgba(255,255,255,.1); margin-top: 60px; padding-top: 26px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 13px; color: rgba(255,255,255,.45); }
 
 /* ---------- Reveal animation ---------- */
