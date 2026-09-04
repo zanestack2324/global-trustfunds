@@ -10,12 +10,12 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script>document.documentElement.className='js';</script>
 </head>
 <body>
-  <div class="splash" id="splash" aria-hidden="true"><div class="splash__inner"><img src="assets/logo.svg" alt="" class="splash__logo" width="72" height="72"><span class="splash__brand">Global <em>Trustfunds</em></span><div class="loader">Loading...</div></div></div>
+  <div class="splash" id="splash" aria-hidden="true"><div class="splash__inner"><img src="assets/logo.svg" alt="" class="splash__logo" width="72" height="72"><span class="splash__brand">Global <em>Trustfunds</em></span><div class="loader"></div></div></div>
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="nav">
@@ -72,12 +72,37 @@
         </div>
       </div>
 
-      <div class="dash-chart-card">
+<div class="dash-chart-card">
         <div class="card__head">
           <span class="card__title">Portfolio Growth</span>
           <span class="card__live"><i></i> Updated live</span>
         </div>
         <div class="dash-chart" id="dashboardChart"></div>
+      </div>
+
+      <div class="dash-section dash-wallet">
+        <div class="dash-section-head">
+          <h2>Crypto Wallet</h2>
+          <button type="button" class="btn btn--outline btn--sm" id="dashOpenInvest">+ Invest on chain</button>
+        </div>
+        <div class="dash-grid">
+          <div class="dash-card">
+            <span class="card__label">Wallet Address</span>
+            <div class="wallet-card__addr" id="dashWalletAddr">Not connected</div>
+            <div class="wallet-card__status" id="dashWalletStatus"></div>
+          </div>
+          <div class="dash-card">
+            <span class="card__label">Tokenized Ownership</span>
+            <div class="dash-value gold" id="dashTokenBalance">$0.00</div>
+            <div class="card__delta">Stored on chain</div>
+          </div>
+          <div class="dash-card">
+            <span class="card__label">Active Chain</span>
+            <div class="dash-value" id="dashChain">Polygon</div>
+            <div class="card__delta">USDC settled</div>
+          </div>
+        </div>
+        <div id="dashChainTxs"></div>
       </div>
 
       <div class="dash-section">
@@ -113,5 +138,6 @@
     try { document.getElementById('year').textContent = new Date().getFullYear(); } catch (e) {}
   </script>
   <script src="script.js"></script>
+  <script src="web3.js"></script>
 </body>
 </html>

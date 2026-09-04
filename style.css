@@ -12,8 +12,9 @@
   --white: #ffffff;
   --radius: 18px;
   --shadow: 0 24px 60px -20px rgba(14, 28, 22, 0.28);
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lato', system-ui, sans-serif;
+  --font-serif: 'Lato', Georgia, serif;
+  --font-display: 'Lato', system-ui, sans-serif;
   --max: 1180px;
 }
 
@@ -154,6 +155,7 @@ input[type="button"]:active {
 .hero { position: relative; background: var(--ink); color: #fff; padding: 190px 0 90px; overflow: hidden; }
 .hero__bg { position: absolute; inset: 0; pointer-events: none; }
 .hero__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .35; }
+.hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .4; }
 .hero__overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,28,22,.95) 0%, rgba(14,28,22,.72) 45%, rgba(14,28,22,.5) 100%); }
 .hero__blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .5; }
 .hero__blob--1 { width: 520px; height: 520px; top: -160px; right: -120px; background: radial-gradient(circle, rgba(201,162,75,.5), transparent 65%); }
@@ -323,7 +325,8 @@ input[type="button"]:active {
 .footer__brand .brand__text { font-size: 20px; }
 .footer__tagline { font-size: 14.5px; margin: 18px 0 22px; max-width: 300px; line-height: 1.7; }
 .footer__social { display: flex; gap: 10px; }
-.footer__social a { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 600; transition: all .25s; }
+.footer__social a { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; transition: all .25s; color: rgba(255,255,255,.85); }
+.footer__social a svg { display: block; }
 .footer__social a:hover { background: var(--gold); border-color: var(--gold); color: #1a1206; }
 .footer__col h4 { color: #fff; font-size: 15px; margin-bottom: 18px; }
 .footer__col a { display: block; font-size: 14px; margin-bottom: 12px; color: rgba(255,255,255,.6); transition: color .2s; }
@@ -485,4 +488,39 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .features__grid, .invest__grid, .testimonials__grid, .how__grid { grid-template-columns: 1fr; }
   .section { padding: 80px 0; }
   .hero { padding: 150px 0 60px; }
+}
+
+/* ---------- Blockchain / On chain ---------- */
+.gt-wallet { white-space: nowrap; }
+.gt-wallet.btn--gold { background: #c9a24b; }
+.gt-modal { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; padding: 20px; }
+.gt-modal.open { display: flex; }
+.gt-modal__overlay { position: absolute; inset: 0; background: rgba(6,12,9,.72); backdrop-filter: blur(4px); }
+.gt-modal__box { position: relative; background: var(--cream); border-radius: var(--radius); max-width: 460px; width: 100%; padding: 30px; box-shadow: var(--shadow); animation: gtPop .25s ease; }
+@keyframes gtPop { from { opacity: 0; transform: translateY(14px) scale(.97); } to { opacity: 1; transform: none; } }
+.gt-modal__close { position: absolute; top: 14px; right: 16px; background: none; border: none; font-size: 28px; line-height: 1; color: var(--muted); cursor: pointer; }
+.gt-modal__close:hover { color: var(--ink); }
+.gt-modal__box h3 { font-family: var(--font-display); color: var(--ink); font-size: 24px; margin-bottom: 20px; }
+.gt-wallet-row { display: flex; align-items: center; gap: 8px; background: var(--cream-2); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px; font-size: 14px; color: var(--text); }
+.gt-wallet-row b { color: var(--ink); font-weight: 700; }
+.gt-dot { width: 9px; height: 9px; border-radius: 50%; background: #2f9e6a; display: inline-block; flex: 0 0 auto; }
+.gt-modal__note { font-size: 13px; color: var(--muted); margin: 14px 0 16px; }
+.gt-modal__note b { color: var(--ink); }
+.gt-invest-btn { width: 100%; }
+.prop__actions { display: inline-flex; gap: 8px; align-items: center; }
+
+/* Wallet dashboard card */
+.wallet-card { display: grid; gap: 14px; }
+.wallet-card__addr { font-family: var(--font-display); color: var(--ink); font-weight: 700; font-size: 16px; word-break: break-all; }
+.wallet-card__status { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text); }
+.dash-wallet { margin-top: 24px; }
+.chaintx { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.chaintx:last-child { border-bottom: none; }
+.chaintx__hash { font-family: monospace; color: var(--muted); font-size: 12px; }
+.chaintx__amt { text-align: right; }
+.chaintx__amt b { color: var(--ink); display: block; }
+
+@media (max-width: 520px) {
+  .prop__actions { flex-direction: column; align-items: stretch; width: 100%; }
+  .prop__actions .btn { width: 100%; text-align: center; display: block; }
 }

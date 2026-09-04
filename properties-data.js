@@ -101,7 +101,10 @@ window.propertyCard = function (p) {
         '</div>' +
         '<div class="prop__foot">' +
           '<span>$' + p.raised + ' raised of $' + p.goal + '</span>' +
+          '<span class="prop__actions">' +
           '<a href="signup.html?invest=' + p.id + '" class="btn btn--gold btn--sm">Invest</a>' +
+          '<button type="button" class="btn btn--outline btn--sm invest-chain" data-propid="' + p.id + '" data-propname="' + p.name + '" data-apy="' + p.apy + '">On Chain</button>' +
+          '</span>' +
         '</div>' +
       '</div>' +
     '</article>'

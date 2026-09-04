@@ -11,12 +11,12 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script>document.documentElement.className='js';</script>
 </head>
 <body>
-  <div class="splash" id="splash" aria-hidden="true"><div class="splash__inner"><img src="assets/logo.svg" alt="" class="splash__logo" width="72" height="72"><span class="splash__brand">Global <em>Trustfunds</em></span><div class="loader">Loading...</div></div></div>
+  <div class="splash" id="splash" aria-hidden="true"><div class="splash__inner"><img src="assets/logo.svg" alt="" class="splash__logo" width="72" height="72"><span class="splash__brand">Global <em>Trustfunds</em></span><div class="loader"></div></div></div>
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="nav" id="nav">
     <div class="container nav__inner">
@@ -51,8 +51,14 @@
         <h2>How We Use Your Information</h2>
         <p>We use your information to provide and improve our services, process investments, respond to inquiries, send relevant communications and updates, enhance security, and comply with legal obligations. We may send you marketing communications only with your consent.</p>
 
-        <h2>Cookies and Analytics</h2>
+<h2>Cookies and Analytics</h2>
         <p>Our website uses cookies and similar technologies to improve functionality, analyze usage, and remember preferences. You can control cookies through your browser settings.</p>
+
+        <h2>Blockchain and Digital Assets</h2>
+        <p>Investments made through Global Trustfunds may be recorded on a blockchain. Wallet addresses and transaction hashes are treated as pseudonymous identifiers and are not linked to your personal identity unless you choose to connect a wallet during a transaction. We use blockchain technology to provide transparent, tamper-evident records of your investments.</p>
+
+        <h2>Connect your Wallet</h2>
+        <p>To invest with digital assets, we may ask you to connect a self-custody wallet such as MetaMask or WalletConnect. We never store or have access to your private keys. Transactions are confirmed on chain and broadcast through your own wallet.</p>
 
         <h2>Sharing of Information</h2>
         <p>We do not sell your personal data. We may share your information with trusted service providers who assist us in operating our platform (such as payment processors and hosting providers), and where required by law.</p>
@@ -77,5 +83,6 @@
   <script>try { document.getElementById('year').textContent = new Date().getFullYear(); } catch (e) {}</script>
   <script src="properties-data.js"></script>
   <script src="script.js"></script>
+  <script src="web3.js"></script>
 </body>
 </html>
