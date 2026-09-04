@@ -39,7 +39,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
-  <link rel="preload" as="video" href="assets/hero.mp4" type="video/mp4" />
+  <link rel="preload" as="video" href="assets/hero-realtor.mp4" type="video/mp4" />
   <link rel="stylesheet" href="style.css" />
   <script>document.documentElement.className='js';</script>
 </head>
@@ -77,7 +77,7 @@
     <div class="hero__bg" aria-hidden="true">
       <div class="hero__overlay"></div>
       <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-property.jpg">
-        <source src="assets/hero.mp4" type="video/mp4" />
+        <source src="assets/hero-realtor.mp4" type="video/mp4" />
       </video>
       <div class="hero__blob hero__blob--1"></div>
       <div class="hero__blob hero__blob--2"></div>
@@ -142,7 +142,7 @@
   </section>
 
   <!-- ================= FEATURES ================= -->
-  <section class="features section section--bg" id="features" style="background-image:url('assets/section-bg.jpg')">
+  <section class="features section section--bg parallax" id="features" style="background-image:url('assets/section-bg.jpg')">
     <div class="container">
       <div class="section__head">
         <span class="section__eyebrow">Why Global Trustfunds</span>
@@ -185,7 +185,7 @@
   </section>
 
   <!-- ================= HOW IT WORKS ================= -->
-  <section class="how section section--bg" id="how" style="background-image:url('assets/section-bg.jpg')">
+  <section class="how section section--bg parallax" id="how" style="background-image:url('assets/section-bg.jpg')">
     <div class="container">
       <div class="section__head">
         <span class="section__eyebrow">How It Works</span>
@@ -216,7 +216,13 @@
   </section>
 
   <!-- ================= PROPERTIES ================= -->
-  <section class="invest section" id="invest">
+  <section class="invest section invest--video" id="invest">
+    <div class="invest__bg" aria-hidden="true">
+      <div class="invest__overlay"></div>
+      <video class="invest__video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-property.jpg">
+        <source src="assets/hero.mp4" type="video/mp4" />
+      </video>
+    </div>
     <div class="container">
       <div class="section__head section__head--row">
         <div>
