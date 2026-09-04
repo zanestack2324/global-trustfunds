@@ -146,40 +146,6 @@
       filterInputs.forEach(function (el) { el.addEventListener('change', applyFilter); });
     }
 
-    // ---------- Hero mini chart ----------
-    var chartBox = document.getElementById('heroChart');
-    if (chartBox) {
-      var data = [24, 30, 28, 38, 36, 48, 46, 58, 62, 60, 72, 78, 82, 90];
-      var w = 340, h = 110, pad = 6;
-      var min = Math.min.apply(null, data), max = Math.max.apply(null, data);
-      var step = (w - pad * 2) / (data.length - 1);
-      function y(v) { return h - pad - ((v - min) / (max - min)) * (h - pad * 2); }
-      var points = data.map(function (v, i) { return (pad + i * step) + ',' + y(v); }).join(' ');
-      var area = '0,' + (h - pad) + ' ' + points + ' ' + (w - pad) + ',' + (h - pad);
-      var NS = 'http://www.w3.org/2000/svg';
-      var svg = document.createElementNS(NS, 'svg');
-      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
-      svg.setAttribute('preserveAspectRatio', 'none');
-      svg.setAttribute('role', 'img');
-      svg.setAttribute('aria-label', 'Portfolio growth chart');
-      svg.style.width = '100%'; svg.style.height = '100%'; svg.style.display = 'block';
-      var g = document.createElementNS(NS, 'g');
-      var grad = document.createElementNS(NS, 'linearGradient');
-      grad.setAttribute('id', 'chartGrad'); grad.setAttribute('x1', '0'); grad.setAttribute('y1', '0'); grad.setAttribute('x2', '0'); grad.setAttribute('y2', '1');
-      var s1 = document.createElementNS(NS, 'stop'); s1.setAttribute('offset', '0'); s1.setAttribute('stop-color', '#c9a24b'); s1.setAttribute('stop-opacity', '.35');
-      var s2 = document.createElementNS(NS, 'stop'); s2.setAttribute('offset', '1'); s2.setAttribute('stop-color', '#c9a24b'); s2.setAttribute('stop-opacity', '0');
-      grad.appendChild(s1); grad.appendChild(s2); svg.appendChild(grad);
-      var areaEl = document.createElementNS(NS, 'polygon'); areaEl.setAttribute('points', area); areaEl.setAttribute('fill', 'url(#chartGrad)'); g.appendChild(areaEl);
-      var line = document.createElementNS(NS, 'polyline');
-      line.setAttribute('points', points); line.setAttribute('fill', 'none'); line.setAttribute('stroke', '#e6c677'); line.setAttribute('stroke-width', '2.5');
-      line.setAttribute('stroke-linejoin', 'round'); line.setAttribute('stroke-linecap', 'round'); g.appendChild(line);
-      svg.appendChild(g); chartBox.appendChild(svg);
-      var len = line.getTotalLength();
-      line.style.strokeDasharray = len; line.style.strokeDashoffset = len;
-      line.getBoundingClientRect(); line.style.transition = 'stroke-dashoffset 1.8s ease .3s';
-      requestAnimationFrame(function () { requestAnimationFrame(function () { line.style.strokeDashoffset = 0; }); });
-    }
-
     // ---------- Returns calculator ----------
     var amountEl = document.getElementById('calcAmount');
     var yearsEl = document.getElementById('calcYears');
