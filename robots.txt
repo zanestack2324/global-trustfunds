@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://global-trustfunds.vercel.app/sitemap.xml

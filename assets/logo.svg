@@ -1,0 +1,17 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gtGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E6C677"/>
+      <stop offset="0.55" stop-color="#C9A24B"/>
+      <stop offset="1" stop-color="#A8833A"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#0E1C16"/>
+  <rect x="2" y="2" width="60" height="60" rx="16" stroke="url(#gtGold)" stroke-width="1.5"/>
+  <!-- stylized building columns forming a rising skyline -->
+  <path d="M16 44h7v-10h-7z" fill="url(#gtGold)"/>
+  <path d="M28.5 44h7V22h-7z" fill="url(#gtGold)"/>
+  <path d="M41 44h7V30h-7z" fill="url(#gtGold)"/>
+  <!-- upward growth arrow stroke -->
+  <path d="M14 20l5 5 4-5 4 5 5-4" stroke="url(#gtGold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

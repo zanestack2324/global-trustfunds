@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Global Trustfunds</title>
+  <meta name="description" content="Get in touch with Global Trustfunds. Our investor support team is available 24/7 to answer your questions." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0e1c16" />
+  <link rel="canonical" href="https://global-trustfunds.vercel.app/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact Us | Global Trustfunds" />
+  <meta property="og:description" content="Get in touch with our 24/7 investor support team." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.className='js';</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="brand" aria-label="Global Trustfunds home">
+        <img src="assets/logo.svg" alt="" width="40" height="40" class="brand__img" />
+        <span class="brand__text">Global <em>Trustfunds</em></span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="index.html#features">Why Us</a>
+        <a href="index.html#invest">Invest</a>
+        <a href="properties.html">Properties</a>
+        <a href="index.html#how">How It Works</a>
+        <a href="about.html">About</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="login.html" class="btn btn--ghost nav-login" id="navLogin">Log In</a>
+        <a href="signup.html" class="btn btn--gold nav-signup" id="navSignup">Get Started</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+  <section class="pagehero">
+    <div class="container">
+      <div class="breadcrumb">Support</div>
+      <h1>Contact Us</h1>
+      <p>Our dedicated investor support team is available 24/7. Reach out and we'll get back to you within 24 hours.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact__grid">
+      <div class="contact__info">
+        <span class="section__eyebrow">Get in touch</span>
+        <h2 class="section__title" style="font-size:30px;margin-bottom:24px">We're here to help</h2>
+        <div class="contact__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div><b>Call Us</b><span>+1 (800) 555-0199</span></div>
+        </div>
+        <div class="contact__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <div><b>Email Us</b><span>support@globaltrustfunds.com</span></div>
+        </div>
+        <div class="contact__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><b>Visit Us</b><span>100 Park Avenue, Suite 2000, New York, NY</span></div>
+        </div>
+        <p style="color:var(--muted);margin-top:16px;font-size:14px">Live chat support is available in the bottom-right corner of your investor dashboard.</p>
+      </div>
+
+      <form class="form" id="contactForm" novalidate>
+        <h2>Send us a message</h2>
+        <div class="form__row">
+          <div class="form__field">
+            <label for="cName">Full Name *</label>
+            <input type="text" id="cName" name="name" required placeholder="John Doe" />
+          </div>
+          <div class="form__field">
+            <label for="cEmail">Email *</label>
+            <input type="email" id="cEmail" name="email" required placeholder="john@email.com" />
+          </div>
+        </div>
+        <div class="form__field" style="margin-bottom:18px">
+          <label for="cSubject">Subject</label>
+          <select id="cSubject" name="subject">
+            <option>General Inquiry</option>
+            <option>Investment Question</option>
+            <option>Account Support</option>
+            <option>Partnership / Business</option>
+          </select>
+        </div>
+        <div class="form__field" style="margin-bottom:18px">
+          <label for="cMessage">Message *</label>
+          <textarea id="cMessage" name="message" rows="6" required placeholder="How can we help you?"></textarea>
+        </div>
+        <button type="submit" class="btn btn--gold">Send Message</button>
+        <p class="form-msg" id="contactMsg" role="status"></p>
+        <p class="form__note">By submitting, you agree to our privacy policy. We never share your data.</p>
+      </form>
+    </div>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="brand" aria-label="Global Trustfunds home">
+          <img src="assets/logo.svg" alt="" width="40" height="40" class="brand__img" />
+          <span class="brand__text">Global <em>Trustfunds</em></span>
+        </a>
+        <p class="footer__tagline">Smart property investment, built on trust. Grow your wealth with premium real estate — starting from just $100.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Twitter/X">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="properties.html">Properties</a>
+        <a href="index.html#how">How It Works</a>
+      </div>
+      <div class="footer__col">
+        <h4>Invest</h4>
+        <a href="properties.html">Browse Properties</a>
+        <a href="index.html#calc">Returns Calculator</a>
+        <a href="signup.html">Open Account</a>
+        <a href="login.html">Investor Login</a>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <a href="risk.html">Risk Disclosure</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="footer__col footer__newsletter">
+        <h4>Stay updated</h4>
+        <p>Get the latest investment opportunities straight to your inbox.</p>
+        <form class="footer__form" id="newsletterForm" novalidate>
+          <label for="newsletterEmail" class="sr-only">Email address</label>
+          <input type="email" id="newsletterEmail" placeholder="Your email address" required />
+          <button type="submit" class="btn btn--gold btn--sm">Subscribe</button>
+        </form>
+        <p class="form-msg" id="newsletterMsg" role="status"></p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year">2026</span> Global Trustfunds. All rights reserved.</span>
+      <span class="footer__disclaim">Investing involves risk, including possible loss of principal. Past performance is not indicative of future results.</span>
+    </div>
+  </footer>
+
+  <script>
+    try { document.getElementById('year').textContent = new Date().getFullYear(); } catch (e) {}
+  </script>
+  <script src="properties-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

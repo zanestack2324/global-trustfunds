@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Global Trustfunds</title>
+  <meta name="description" content="Your Global Trustfunds investor dashboard." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0e1c16" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.className='js';</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="brand" aria-label="Global Trustfunds home">
+        <img src="assets/logo.svg" alt="" width="40" height="40" class="brand__img" />
+        <span class="brand__text">Global <em>Trustfunds</em></span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="properties.html">Properties</a>
+        <a href="index.html#calc">Calculator</a>
+        <a href="contact.html">Support</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="index.html" class="btn btn--ghost" id="logoutBtn">Log Out</a>
+        <span class="dash-user"><span class="dash-avatar" id="dashAvatar">I</span><span class="dash-email" id="dashEmail">investor@email.com</span></span>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="dash-main">
+    <div class="container">
+      <div class="dash-welcome">
+        <div>
+          <span class="section__eyebrow">Investor Dashboard</span>
+          <h1>Welcome back, <span id="dashName">Investor</span> 👋</h1>
+        </div>
+        <a href="properties.html" class="btn btn--gold">+ New Investment</a>
+      </div>
+
+      <div class="dash-grid">
+        <div class="dash-card">
+          <span class="card__label">Total Portfolio Value</span>
+          <div class="dash-value">$24,850.00</div>
+          <div class="card__delta up">▲ +$412.30 this month</div>
+        </div>
+        <div class="dash-card">
+          <span class="card__label">Monthly Income</span>
+          <div class="dash-value">$486.00</div>
+          <div class="card__delta up">▲ +$22.10 vs last month</div>
+        </div>
+        <div class="dash-card">
+          <span class="card__label">Weighted APY</span>
+          <div class="dash-value gold">14.2%</div>
+          <div class="card__delta up">Above target</div>
+        </div>
+        <div class="dash-card">
+          <span class="card__label">Active Investments</span>
+          <div class="dash-value">12</div>
+          <div class="card__delta">Across 4 properties</div>
+        </div>
+      </div>
+
+      <div class="dash-chart-card">
+        <div class="card__head">
+          <span class="card__title">Portfolio Growth</span>
+          <span class="card__live"><i></i> Updated live</span>
+        </div>
+        <div class="dash-chart" id="dashboardChart"></div>
+      </div>
+
+      <div class="dash-section">
+        <div class="dash-section-head">
+          <h2>Your Investments</h2>
+          <a href="properties.html" class="btn btn--outline btn--sm">View All</a>
+        </div>
+        <div class="dash-table-wrap">
+          <table class="dash-table">
+            <thead>
+              <tr><th>Property</th><th>Type</th><th>Invested</th><th>APY</th><th>Term</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>The Meridian Residences</td><td>Residential</td><td>$5,000</td><td class="gold">13.4%</td><td>24 mo</td><td><span class="pill pill--ok">Funding</span></td></tr>
+              <tr><td>Skyline Business Park</td><td>Commercial</td><td>$3,500</td><td class="gold">14.1%</td><td>36 mo</td><td><span class="pill">Distributing</span></td></tr>
+              <tr><td>Harbor View Estates</td><td>Luxury</td><td>$7,000</td><td class="gold">12.8%</td><td>30 mo</td><td><span class="pill pill--ok">Distributing</span></td></tr>
+              <tr><td>Oakwood Family Homes</td><td>Residential</td><td>$2,000</td><td class="gold">12.2%</td><td>24 mo</td><td><span class="pill">Funding</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__bottom">
+      <span>© <span id="year">2026</span> Global Trustfunds. All rights reserved.</span>
+      <span class="footer__disclaim">Demo dashboard shown for illustration. Investing involves risk.</span>
+    </div>
+  </footer>
+
+  <script>
+    try { document.getElementById('year').textContent = new Date().getFullYear(); } catch (e) {}
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

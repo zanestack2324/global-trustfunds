@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account | Global Trustfunds</title>
+  <meta name="description" content="Create your free Global Trustfunds account and start investing in premium real estate from just $100." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0e1c16" />
+  <link rel="canonical" href="https://global-trustfunds.vercel.app/signup.html" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.className='js';</script>
+</head>
+<body class="auth-body">
+  <div class="auth">
+    <aside class="auth__side">
+      <div>
+        <a href="index.html" class="brand" aria-label="Back to Global Trustfunds home">
+          <img src="assets/logo.svg" alt="" width="44" height="44" class="brand__img" />
+          <span class="brand__text">Global <em>Trustfunds</em></span>
+        </a>
+        <div style="margin-top:60px">
+          <h2>Your journey to passive income starts here</h2>
+          <p>Join 25,000+ investors building wealth through premium real estate.</p>
+          <ul class="auth__points">
+            <li><span class="check">✓</span> Invest from just $100</li>
+            <li><span class="check">✓</span> Earn up to 14% APY</li>
+            <li><span class="check">✓</span> Monthly passive income</li>
+            <li><span class="check">✓</span> Bank-grade security</li>
+          </ul>
+        </div>
+      </div>
+      <div class="auth__side-foot">© 2026 Global Trustfunds. All rights reserved.</div>
+    </aside>
+
+    <div class="auth__form-wrap">
+      <div class="auth__form">
+        <form class="form" id="signupForm" novalidate>
+          <h2 style="font-size:30px">Create your account</h2>
+          <p id="investNotice" class="form-msg success" style="display:none"></p>
+          <div class="form__field" style="margin-bottom:18px">
+            <label for="sName">Full Name *</label>
+            <input type="text" id="sName" name="name" required placeholder="John Doe" autocomplete="name" />
+          </div>
+          <div class="form__field" style="margin-bottom:18px">
+            <label for="sEmail">Email Address *</label>
+            <input type="email" id="sEmail" name="email" required placeholder="john@email.com" autocomplete="email" />
+          </div>
+          <div class="form__field" style="margin-bottom:18px">
+            <label for="sPass">Password *</label>
+            <input type="password" id="sPass" name="password" required minlength="6" placeholder="At least 6 characters" autocomplete="new-password" />
+          </div>
+          <label class="agree">
+            <input type="checkbox" id="sAgree" required />
+            <span>I agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.</span>
+          </label>
+          <button type="submit" class="btn btn--gold btn--lg" style="width:100%;margin-top:20px">Create Account</button>
+          <p class="form-msg" id="signupMsg" role="status"></p>
+          <p class="auth__toggle">Already have an account? <a href="login.html">Log in</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
