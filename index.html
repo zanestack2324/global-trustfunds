@@ -39,12 +39,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
-  <link rel="preload" as="video" href="assets/hero-realtor.mp4" type="video/mp4" />
+  <link rel="preload" as="video" href="assets/hero-market.mp4" type="video/mp4" />
   <link rel="stylesheet" href="style.css" />
   <script>document.documentElement.className='js';</script>
 </head>
 <body>
-  <div class="splash" id="splash" aria-hidden="true"><div class="splash__inner"><img src="assets/logo.svg" alt="" class="splash__logo" width="72" height="72"><span class="splash__brand">Global <em>Trustfunds</em></span><div class="loader"></div></div></div>
+  <div class="splash" id="splash" aria-hidden="true"><div class="splash__inner"><div class="boxes"><div class="box"><div></div><div></div><div></div><div></div></div><div class="box"><div></div><div></div><div></div><div></div></div><div class="box"><div></div><div></div><div></div><div></div></div><div class="box"><div></div><div></div><div></div><div></div></div></div></div></div>
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- ================= NAV ================= -->
@@ -52,21 +52,32 @@
     <div class="container nav__inner">
       <a href="index.html" class="brand" aria-label="Global Trustfunds home">
         <img src="assets/logo.svg" alt="" width="40" height="40" class="brand__img" />
-        <span class="brand__text">Global <em>Trustfunds</em></span>
-      </a>
+        </a>
       <nav class="nav__links" id="navLinks" aria-label="Primary">
-        <a href="index.html" class="active">Home</a>
-        <a href="properties.html">Properties</a>
-        <a href="how.html">How It Works</a>
-        <a href="why.html">Why Us</a>
-        <a href="about.html">About</a>
-        <a href="calculator.html">Calculator</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+        <div class="btn-group btn-group--menu">
+          <button type="button" class="menu-trigger" id="menuTrigger" aria-haspopup="true" aria-expanded="false">Explore</button>
+          <div class="btn-group__menu navmenu" role="menu" aria-label="Site menu">
+            <a href="index.html" class="active" role="menuitem">Home</a>
+            <a href="properties.html" role="menuitem">Properties</a>
+            <a href="how.html" role="menuitem">How It Works</a>
+            <a href="why.html" role="menuitem">Why Us</a>
+            <a href="about.html" role="menuitem">About</a>
+            <a href="calculator.html" role="menuitem">Calculator</a>
+            <a href="faq.html" role="menuitem">FAQ</a>
+            <a href="contact.html" role="menuitem">Contact</a>
+          </div>
+        </div>
       </nav>
       <div class="nav__actions">
-        <a href="login.html" class="btn btn--ghost nav-login" id="navLogin">Log In</a>
-        <a href="signup.html" class="btn btn--gold nav-signup" id="navSignup">Get Started</a>
+        <div class="btn-group btn-group--nav">
+          <span class="btn-group__trigger">
+            <a href="signup.html" class="btn btn--gold nav-signup" id="navSignup">Get Started</a>
+          </span>
+          <div class="btn-group__menu" role="menu">
+            <a href="login.html" class="btn-group__item nav-login" id="navLogin" role="menuitem"><span aria-hidden="true">→</span>Log In</a>
+            <a href="signup.html" class="btn-group__item" role="menuitem"><span aria-hidden="true">→</span>Sign Up</a>
+          </div>
+        </div>
       </div>
       <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -80,30 +91,73 @@
     <div class="hero__bg" aria-hidden="true">
       <div class="hero__overlay"></div>
       <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-property.jpg">
-        <source src="assets/hero-realtor.mp4" type="video/mp4" />
+        <source src="assets/hero-market.mp4" type="video/mp4" />
       </video>
       <div class="hero__blob hero__blob--1"></div>
       <div class="hero__blob hero__blob--2"></div>
     </div>
     <div class="container hero__inner">
-      <div class="hero__content">
-        <span class="badge">Trusted by 25,000+ investors worldwide</span>
-        <h1>Invest in premium real estate, <span>without</span> buying the whole building</h1>
-        <p class="hero__lead">
-          Global Trustfunds makes institutional-grade property investment accessible to everyone.
-          Start with as little as <strong>$100</strong>, earn stable monthly returns, and grow your wealth with confidence.
-        </p>
-        <div class="hero__cta">
-<a href="signup.html" class="btn btn--gold btn--lg">Start Investing Now</a>
-          <a href="properties.html" class="btn btn--ghost btn--lg">Explore Properties</a>
-        </div>
-<div class="hero__trust">
-          <div class="hero__avatars">
-            <span>A</span><span>M</span><span>J</span><span>S</span><span>K</span>
+      <div class="hero__grid">
+        <div class="hero__content">
+          <span class="badge">Trusted by 25,000+ investors worldwide</span>
+          <h1>Invest in premium real estate, <span>without</span> buying the whole building</h1>
+          <p class="hero__lead">
+            Global Trustfunds makes institutional-grade property investment accessible to everyone.
+            Start with as little as <strong>$100</strong>, earn stable monthly returns, and grow your wealth with confidence.
+          </p>
+          <div class="hero__cta">
+            <div class="btn-group btn-group--hero">
+              <span class="btn-group__trigger">
+                <a href="signup.html" class="btn btn--gold btn--lg">Start Investing</a>
+              </span>
+              <div class="btn-group__menu" role="menu">
+                <a href="signup.html" class="btn-group__item" role="menuitem"><span aria-hidden="true">→</span>Start Investing Now</a>
+                <a href="properties.html" class="btn-group__item" role="menuitem"><span aria-hidden="true">→</span>Explore Properties</a>
+                <a href="calculator.html" class="btn-group__item" role="menuitem"><span aria-hidden="true">→</span>Use the Returns Calculator</a>
+                <a href="how.html" class="btn-group__item" role="menuitem"><span aria-hidden="true">→</span>See How It Works</a>
+              </div>
+            </div>
           </div>
-          <div class="hero__trust-text">
-            <div class="stars" aria-label="Rated 5 out of 5 stars">★★★★★</div>
-            <span>4.9/5 from 8,200+ reviews</span>
+          <div class="hero__trust">
+            <div class="hero__avatars">
+              <span>A</span><span>M</span><span>J</span><span>S</span><span>K</span>
+            </div>
+            <div class="hero__trust-text">
+              <div class="stars" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+              <span>4.9/5 from 8,200+ reviews</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__preview" aria-hidden="true">
+          <div class="dashpreview__glow"></div>
+          <div class="dashpreview">
+            <div class="dashpreview__head">
+              <div>
+                <div class="dashpreview__label">My Portfolio</div>
+                <div class="dashpreview__balance">$128,450<small>+2.4% this month</small></div>
+              </div>
+              <span class="dashpreview__pill">Live</span>
+            </div>
+            <div class="dashpreview__bar"><span style="width: 72%"></span></div>
+            <div class="dashpreview__row">
+              <img class="dashpreview__thumb" src="assets/prop-residential.jpg" alt="" />
+              <div class="dashpreview__name">Skyline Lofts<span>612 Main St</span></div>
+              <span class="dashpreview__apy">+11.2%</span>
+            </div>
+            <div class="dashpreview__row">
+              <img class="dashpreview__thumb" src="assets/prop-luxury.jpg" alt="" />
+              <div class="dashpreview__name">Harbor Heights<span>88 Pier Ave</span></div>
+              <span class="dashpreview__apy">+9.8%</span>
+            </div>
+            <div class="dashpreview__row">
+              <img class="dashpreview__thumb" src="assets/prop-commercial.jpg" alt="" />
+              <div class="dashpreview__name">Metro District<span>201 Commerce</span></div>
+              <span class="dashpreview__apy">+12.6%</span>
+            </div>
+            <div class="dashpreview__foot">
+              <a href="calculator.html">See Your Returns</a>
+            </div>
           </div>
         </div>
       </div>
@@ -215,8 +269,7 @@
       <div class="footer__brand">
         <a href="index.html" class="brand" aria-label="Global Trustfunds home">
           <img src="assets/logo.svg" alt="" width="40" height="40" class="brand__img" />
-          <span class="brand__text">Global <em>Trustfunds</em></span>
-        </a>
+          </a>
         <p class="footer__tagline">Smart property investment, built on trust. Grow your wealth with premium real estate, starting from just $100.</p>
         <div class="footer__social">
           <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>

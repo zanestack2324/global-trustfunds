@@ -20,29 +20,40 @@
   <script>document.documentElement.className='js';</script>
 </head>
 <body>
-  <div class="splash" id="splash" aria-hidden="true"><div class="splash__inner"><img src="assets/logo.svg" alt="" class="splash__logo" width="72" height="72"><span class="splash__brand">Global <em>Trustfunds</em></span><div class="loader"></div></div></div>
+  <div class="splash" id="splash" aria-hidden="true"><div class="splash__inner"><div class="boxes"><div class="box"><div></div><div></div><div></div><div></div></div><div class="box"><div></div><div></div><div></div><div></div></div><div class="box"><div></div><div></div><div></div><div></div></div><div class="box"><div></div><div></div><div></div><div></div></div></div></div></div>
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="nav" id="nav">
     <div class="container nav__inner">
       <a href="index.html" class="brand" aria-label="Global Trustfunds home">
         <img src="assets/logo.svg" alt="" width="40" height="40" class="brand__img" />
-        <span class="brand__text">Global <em>Trustfunds</em></span>
-      </a>
+        </a>
             <nav class="nav__links" id="navLinks" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="properties.html">Properties</a>
-        <a href="how.html">How It Works</a>
-        <a href="why.html">Why Us</a>
-        <a href="about.html" class="active">About</a>
-        <a href="calculator.html">Calculator</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+        <div class="btn-group btn-group--menu">
+          <button type="button" class="menu-trigger" id="menuTrigger" aria-haspopup="true" aria-expanded="false">Explore</button>
+          <div class="btn-group__menu navmenu" role="menu" aria-label="Site menu">
+            <a href="index.html" role="menuitem">Home</a>
+            <a href="properties.html" role="menuitem">Properties</a>
+            <a href="how.html" role="menuitem">How It Works</a>
+            <a href="why.html" role="menuitem">Why Us</a>
+            <a href="about.html" class="active" role="menuitem">About</a>
+            <a href="calculator.html" role="menuitem">Calculator</a>
+            <a href="faq.html" role="menuitem">FAQ</a>
+            <a href="contact.html" role="menuitem">Contact</a>
+          </div>
+        </div>
       </nav>
 
-      <div class="nav__actions">
-        <a href="login.html" class="btn btn--ghost nav-login" id="navLogin">Log In</a>
-        <a href="signup.html" class="btn btn--gold nav-signup" id="navSignup">Get Started</a>
+            <div class="nav__actions">
+        <div class="btn-group btn-group--nav">
+          <span class="btn-group__trigger">
+            <a href="signup.html" class="btn btn--gold nav-signup" id="navSignup">Get Started</a>
+          </span>
+          <div class="btn-group__menu" role="menu">
+            <a href="login.html" class="btn-group__item nav-login" id="navLogin" role="menuitem"><span aria-hidden="true">→</span>Log In</a>
+            <a href="signup.html" class="btn-group__item" role="menuitem"><span aria-hidden="true">→</span>Sign Up</a>
+          </div>
+        </div>
       </div>
       <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -124,8 +135,7 @@
       <div class="footer__brand">
         <a href="index.html" class="brand" aria-label="Global Trustfunds home">
           <img src="assets/logo.svg" alt="" width="40" height="40" class="brand__img" />
-          <span class="brand__text">Global <em>Trustfunds</em></span>
-        </a>
+          </a>
         <p class="footer__tagline">Smart property investment, built on trust. Grow your wealth with premium real estate, starting from just $100.</p>
         <div class="footer__social">
           <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
