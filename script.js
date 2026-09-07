@@ -20,6 +20,18 @@
     });
     btnObserver.observe(document.body, { childList: true, subtree: true });
 
+    // ---------- Demo banner dismiss ----------
+    var demoBanner = document.getElementById('demoBanner');
+    if (demoBanner) {
+      demoBanner.querySelector('.demo-banner__close').addEventListener('click', function () {
+        demoBanner.classList.add('hidden');
+        try { localStorage.setItem('gt_demo_dismiss', '1'); } catch (e) {}
+      });
+      var dismissed = null;
+      try { dismissed = localStorage.getItem('gt_demo_dismiss'); } catch (e) {}
+      if (dismissed) demoBanner.classList.add('hidden');
+    }
+
     // ---------- Splashscreen hide ----------
     function hideSplash() {
       var s = document.getElementById('splash');
