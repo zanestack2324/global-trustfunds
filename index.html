@@ -21,7 +21,7 @@
   <meta name="twitter:description" content="Invest in premium real estate from $100. Earn up to 14% APY in monthly passive income." />
   <meta name="twitter:image" content="https://global-trustfunds.vercel.app/assets/hero-property.jpg" />
 
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -50,18 +50,41 @@
   <!-- ================= NAV ================= -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
+      <a href="index.html" class="brand" aria-label="Global Trustfunds home">
+        <img src="assets/logo.png" alt="Global Trustfunds" width="90" class="brand__img" />
+      </a>
             <nav class="nav__links" id="navLinks" aria-label="Primary">
         <div class="btn-group btn-group--menu">
           <button type="button" class="menu-trigger" id="menuTrigger" aria-haspopup="true" aria-expanded="false">Explore</button>
-          <div class="btn-group__menu navmenu" role="menu" aria-label="Site menu">
-            <a href="index.html" class="active" role="menuitem">Home</a>
-            <a href="properties.html" role="menuitem">Properties</a>
-            <a href="how.html" role="menuitem">How It Works</a>
-            <a href="why.html" role="menuitem">Why Us</a>
-            <a href="about.html" role="menuitem">About</a>
-            <a href="calculator.html" role="menuitem">Calculator</a>
-            <a href="faq.html" role="menuitem">FAQ</a>
-            <a href="contact.html" role="menuitem">Contact</a>
+          <div class="btn-group__menu navmenu navmenu--explore" role="menu" aria-label="Explore menu">
+            <div class="navmenu__col">
+              <div class="navmenu__heading">Markets</div>
+              <a href="#" class="navmenu__item" role="menuitem"><span class="navmenu__label">Explore the markets</span></a>
+              <div class="navmenu__heading">Real Estate</div>
+              <a href="properties.html" class="navmenu__item" role="menuitem"><span class="navmenu__label">Invest in real estate</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="btn-group btn-group--menu">
+          <button type="button" class="menu-trigger" aria-haspopup="true" aria-expanded="false">Staking</button>
+          <div class="btn-group__menu navmenu navmenu--sm" role="menu" aria-label="Staking menu">
+            <a href="#" class="navmenu__item" role="menuitem"><span class="navmenu__label">Stake your tokens and earn</span></a>
+          </div>
+        </div>
+        <div class="btn-group btn-group--menu">
+          <button type="button" class="menu-trigger" aria-haspopup="true" aria-expanded="false">Company</button>
+          <div class="btn-group__menu navmenu navmenu--sm" role="menu" aria-label="Company menu">
+            <a href="about.html" class="navmenu__item" role="menuitem"><span class="navmenu__label">About us</span><span class="navmenu__desc">About Nestfinks</span></a>
+            <a href="contact.html" class="navmenu__item" role="menuitem"><span class="navmenu__label">Contact</span><span class="navmenu__desc">Send us a message</span></a>
+            <a href="faq.html" class="navmenu__item" role="menuitem"><span class="navmenu__label">Help center</span><span class="navmenu__desc">Frequently asked questions</span></a>
+          </div>
+        </div>
+        <div class="btn-group btn-group--menu">
+          <button type="button" class="menu-trigger" aria-haspopup="true" aria-expanded="false">Trade</button>
+          <div class="btn-group__menu navmenu navmenu--sm" role="menu" aria-label="Trade menu">
+            <a href="#" class="navmenu__item" role="menuitem"><span class="navmenu__label">Stocks &amp; ETFs</span><span class="navmenu__desc">Invest and trade shares</span></a>
+            <a href="#" class="navmenu__item" role="menuitem"><span class="navmenu__label">Crypto</span><span class="navmenu__desc">Trade cryptocurrencies</span></a>
+            <a href="#" class="navmenu__item" role="menuitem"><span class="navmenu__label">Copy Trading</span><span class="navmenu__desc">Copy expert trades</span></a>
           </div>
         </div>
       </nav>
@@ -173,6 +196,44 @@
     </div>
   </section>
 
+  <!-- ================= MARKET TICKER ================= -->
+  <section class="market" aria-label="Live market ticker">
+    <div class="market__wrap">
+      <div class="market__scroll">
+        <div class="market__group">
+          <span class="market__tag">Trading Tools</span>
+          <span class="mquote"><b>BTC</b><span class="mquote__price">$67,240</span><span class="mquote__chg up">+2.4%</span></span>
+          <span class="mquote"><b>ETH</b><span class="mquote__price">$3,518</span><span class="mquote__chg up">+1.8%</span></span>
+          <span class="mquote"><b>NFLX</b><span class="mquote__price">$684</span><span class="mquote__chg down">-1.2%</span></span>
+          <span class="mquote"><b>AAPL</b><span class="mquote__price">$254</span><span class="mquote__chg up">+0.9%</span></span>
+          <span class="mquote"><b>TSLA</b><span class="mquote__price">$339</span><span class="mquote__chg down">-3.1%</span></span>
+          <span class="mquote"><b>NVDA</b><span class="mquote__price">$141</span><span class="mquote__chg up">+4.6%</span></span>
+          <span class="mquote"><b>GOOGL</b><span class="mquote__price">$187</span><span class="mquote__chg up">+1.1%</span></span>
+          <span class="mquote"><b>AMZN</b><span class="mquote__price">$201</span><span class="mquote__chg down">-0.4%</span></span>
+          <span class="mquote"><b>MSFT</b><span class="mquote__price">$432</span><span class="mquote__chg up">+0.7%</span></span>
+          <span class="mquote"><b>META</b><span class="mquote__price">$589</span><span class="mquote__chg up">+1.3%</span></span>
+          <span class="mquote"><b>SPX</b><span class="mquote__price">$5,431</span><span class="mquote__chg up">+0.5%</span></span>
+          <span class="mquote"><b>GOLD</b><span class="mquote__price">$2,414</span><span class="mquote__chg up">+0.3%</span></span>
+        </div>
+        <div class="market__group" aria-hidden="true">
+          <span class="market__tag">Trading Tools</span>
+          <span class="mquote"><b>BTC</b><span class="mquote__price">$67,240</span><span class="mquote__chg up">+2.4%</span></span>
+          <span class="mquote"><b>ETH</b><span class="mquote__price">$3,518</span><span class="mquote__chg up">+1.8%</span></span>
+          <span class="mquote"><b>NFLX</b><span class="mquote__price">$684</span><span class="mquote__chg down">-1.2%</span></span>
+          <span class="mquote"><b>AAPL</b><span class="mquote__price">$254</span><span class="mquote__chg up">+0.9%</span></span>
+          <span class="mquote"><b>TSLA</b><span class="mquote__price">$339</span><span class="mquote__chg down">-3.1%</span></span>
+          <span class="mquote"><b>NVDA</b><span class="mquote__price">$141</span><span class="mquote__chg up">+4.6%</span></span>
+          <span class="mquote"><b>GOOGL</b><span class="mquote__price">$187</span><span class="mquote__chg up">+1.1%</span></span>
+          <span class="mquote"><b>AMZN</b><span class="mquote__price">$201</span><span class="mquote__chg down">-0.4%</span></span>
+          <span class="mquote"><b>MSFT</b><span class="mquote__price">$432</span><span class="mquote__chg up">+0.7%</span></span>
+          <span class="mquote"><b>META</b><span class="mquote__price">$589</span><span class="mquote__chg up">+1.3%</span></span>
+          <span class="mquote"><b>SPX</b><span class="mquote__price">$5,431</span><span class="mquote__chg up">+0.5%</span></span>
+          <span class="mquote"><b>GOLD</b><span class="mquote__price">$2,414</span><span class="mquote__chg up">+0.3%</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= STATS ================= -->
   <section class="stats" aria-label="Company statistics">
     <div class="container stats__grid">
@@ -247,6 +308,51 @@
     </div>
   </section>
 
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section__head section__head--row">
+        <div>
+          <span class="section__eyebrow">Testimonials</span>
+          <h2 class="section__title">Investors who trust Global Trustfunds</h2>
+        </div>
+        <a href="testimonials.html" class="btn btn--outline">All Testimonials →</a>
+      </div>
+      <div class="testimonials__grid">
+        <figure class="tcard">
+          <div class="stars" aria-label="5 out of 5">★★★★★</div>
+          <blockquote>"I started with just $500 two years ago. Today my portfolio has grown past $8,000 and I receive income every single month. Handing my money to Global Trustfunds was the easiest decision I made."</blockquote>
+          <figcaption class="tcard__by"><span class="avatar avatar--photo"><img src="https://i.pravatar.cc/88?img=12" alt="Michael Anderson" width="44" height="44" loading="lazy" /></span><div><b>Michael Anderson</b><span>Investor, 2 years</span></div></figcaption>
+        </figure>
+        <figure class="tcard">
+          <div class="stars" aria-label="5 out of 5">★★★★★</div>
+          <blockquote>"The transparency is what won me over. Every property comes with full financials and projections. This is real, institutional grade investing made accessible."</blockquote>
+          <figcaption class="tcard__by"><span class="avatar avatar--photo"><img src="https://i.pravatar.cc/88?img=47" alt="Sarah Chen" width="44" height="44" loading="lazy" /></span><div><b>Sarah Chen</b><span>Verified Investor</span></div></figcaption>
+        </figure>
+        <figure class="tcard">
+          <div class="stars" aria-label="5 out of 5">★★★★★</div>
+          <blockquote>"Outstanding platform and even better support team. My monthly payouts arrive on time, every time. I've already recommended it to my whole family."</blockquote>
+          <figcaption class="tcard__by"><span class="avatar avatar--photo"><img src="https://i.pravatar.cc/88?img=68" alt="James Miller" width="44" height="44" loading="lazy" /></span><div><b>James Miller</b><span>Investor, 3 years</span></div></figcaption>
+        </figure>
+        <figure class="tcard">
+          <div class="stars" aria-label="5 out of 5">★★★★★</div>
+          <blockquote>"I was hesitant to invest online at first, but the team walked me through every step. Six months in and the returns are exactly as projected, on time and on budget."</blockquote>
+          <figcaption class="tcard__by"><span class="avatar avatar--photo"><img src="https://i.pravatar.cc/88?img=32" alt="Emily Rodriguez" width="44" height="44" loading="lazy" /></span><div><b>Emily Rodriguez</b><span>Investor, 6 months</span></div></figcaption>
+        </figure>
+        <figure class="tcard">
+          <div class="stars" aria-label="5 out of 5">★★★★★</div>
+          <blockquote>"As a busy professional, I love that I can diversify into real estate without managing tenants or repairs. The dashboard makes everything effortless."</blockquote>
+          <figcaption class="tcard__by"><span class="avatar avatar--photo"><img src="https://i.pravatar.cc/88?img=15" alt="David Thompson" width="44" height="44" loading="lazy" /></span><div><b>David Thompson</b><span>Verified Investor</span></div></figcaption>
+        </figure>
+        <figure class="tcard">
+          <div class="stars" aria-label="5 out of 5">★★★★★</div>
+          <blockquote>"I've rolled over three payouts into new properties already. The compounding is powerful, and the team keeps me informed every step of the way."</blockquote>
+          <figcaption class="tcard__by"><span class="avatar avatar--photo"><img src="https://i.pravatar.cc/88?img=44" alt="Rachel Kim" width="44" height="44" loading="lazy" /></span><div><b>Rachel Kim</b><span>Investor, 4 years</span></div></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= CTA ================= -->
   <section class="cta">
     <div class="container cta__inner">
@@ -265,7 +371,7 @@
     <div class="container footer__grid">
       <div class="footer__brand">
                 <a href="index.html" class="brand" aria-label="Global Trustfunds home">
-                  <img src="assets/logo.png" alt="" width="40" height="40" class="brand__img" />
+                  <img src="assets/logo.png" alt="" width="80"  class="brand__img" />
                 </a>
                 <p class="footer__tagline">Smart property investment, built on trust. Grow your wealth with premium real estate, starting from just $100.</p>
         <div class="footer__social">
@@ -311,6 +417,13 @@
         </form>
         <p class="form-msg" id="newsletterMsg" role="status"></p>
       </div>
+    </div>
+    <div class="container footer__risk">
+      <h5>Risk Disclosure</h5>
+      <p>The risk of loss in trading stocks, options, futures, currencies, foreign equities, and fixed income can be substantial. Before you trade, please read the relevant risk disclosure statements on our <a href="risk.html">Warnings and Disclosures</a> page.</p>
+      <p>Trading on margin is only for experienced investors with a high risk tolerance. You may lose more than your initial investment. For additional information about margin loan rates, please see our <a href="risk.html">Margin Loan Rates</a>.</p>
+      <p>Security futures involve a high degree of risk and are not suitable for all investors. The amount you may lose may be greater than your initial investment. Before trading security futures, please read the <a href="risk.html">Security Futures Risk Disclosure Statement</a>.</p>
+      <p>Structured products and fixed income products such as bonds are complex products that carry additional risk and are not suitable for all investors. Before trading, please read the <a href="risk.html">Risk Warning and Disclosure Statement</a>.</p>
     </div>
     <div class="container footer__bottom">
       <span>© <span id="year">2026</span> Global Trustfunds. All rights reserved.</span>

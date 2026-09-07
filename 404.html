@@ -6,7 +6,7 @@
   <title>Page Not Found | Global Trustfunds</title>
   <meta name="robots" content="noindex" />
   <meta name="theme-color" content="#0b1829" />
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
@@ -15,9 +15,23 @@
 </head>
 <body>
   <div class="splash" id="splash" aria-hidden="true"><div class="splash__inner"><div class="boxes"><div class="box"><div></div><div></div><div></div><div></div></div><div class="box"><div></div><div></div><div></div><div></div></div><div class="box"><div></div><div></div><div></div><div></div></div><div class="box"><div></div><div></div><div></div><div></div></div></div></div></div>
-  <header class="nav scrolled" id="nav">
+<header class="nav scrolled" id="nav">
     <div class="container nav__inner">
+      <a href="index.html" class="brand" aria-label="Global Trustfunds home">
+        <img src="assets/logo.png" alt="Global Trustfunds" width="90" class="brand__img" />
+      </a>
+      <div class="nav__actions">
+        <div class="btn-group btn-group--nav">
+          <span class="btn-group__trigger">
+            <a href="signup.html" class="btn btn--gold nav-signup" id="navSignup">Get Started</a>
+          </span>
+          <div class="btn-group__menu" role="menu">
+            <a href="login.html" class="btn-group__item nav-login" id="navLogin" role="menuitem"><span aria-hidden="true">→</span>Log In</a>
+            <a href="signup.html" class="btn-group__item" role="menuitem"><span aria-hidden="true">→</span>Sign Up</a>
           </div>
+        </div>
+      </div>
+    </div>
   </header>
   <main id="main">
     <section class="notfound">

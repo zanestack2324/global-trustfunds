@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0b1829" />
   <link rel="canonical" href="https://global-trustfunds.vercel.app/privacy.html" />
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
@@ -20,23 +20,45 @@
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="nav" id="nav">
     <div class="container nav__inner">
-                  <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="index.html" class="brand" aria-label="Global Trustfunds home">
+        <img src="assets/logo.png" alt="Global Trustfunds" width="90" class="brand__img" />
+      </a>
+            <nav class="nav__links" id="navLinks" aria-label="Primary">
         <div class="btn-group btn-group--menu">
           <button type="button" class="menu-trigger" id="menuTrigger" aria-haspopup="true" aria-expanded="false">Explore</button>
-          <div class="btn-group__menu navmenu" role="menu" aria-label="Site menu">
-            <a href="index.html" role="menuitem">Home</a>
-            <a href="properties.html" role="menuitem">Properties</a>
-            <a href="how.html" role="menuitem">How It Works</a>
-            <a href="why.html" role="menuitem">Why Us</a>
-            <a href="about.html" role="menuitem">About</a>
-            <a href="calculator.html" role="menuitem">Calculator</a>
-            <a href="faq.html" role="menuitem">FAQ</a>
-            <a href="contact.html" role="menuitem">Contact</a>
+          <div class="btn-group__menu navmenu navmenu--explore" role="menu" aria-label="Explore menu">
+            <div class="navmenu__col">
+              <div class="navmenu__heading">Markets</div>
+              <a href="#" class="navmenu__item" role="menuitem"><span class="navmenu__label">Explore the markets</span></a>
+              <div class="navmenu__heading">Real Estate</div>
+              <a href="properties.html" class="navmenu__item" role="menuitem"><span class="navmenu__label">Invest in real estate</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="btn-group btn-group--menu">
+          <button type="button" class="menu-trigger" aria-haspopup="true" aria-expanded="false">Staking</button>
+          <div class="btn-group__menu navmenu navmenu--sm" role="menu" aria-label="Staking menu">
+            <a href="#" class="navmenu__item" role="menuitem"><span class="navmenu__label">Stake your tokens and earn</span></a>
+          </div>
+        </div>
+        <div class="btn-group btn-group--menu">
+          <button type="button" class="menu-trigger" aria-haspopup="true" aria-expanded="false">Company</button>
+          <div class="btn-group__menu navmenu navmenu--sm" role="menu" aria-label="Company menu">
+            <a href="about.html" class="navmenu__item" role="menuitem"><span class="navmenu__label">About us</span><span class="navmenu__desc">About Nestfinks</span></a>
+            <a href="contact.html" class="navmenu__item" role="menuitem"><span class="navmenu__label">Contact</span><span class="navmenu__desc">Send us a message</span></a>
+            <a href="faq.html" class="navmenu__item" role="menuitem"><span class="navmenu__label">Help center</span><span class="navmenu__desc">Frequently asked questions</span></a>
+          </div>
+        </div>
+        <div class="btn-group btn-group--menu">
+          <button type="button" class="menu-trigger" aria-haspopup="true" aria-expanded="false">Trade</button>
+          <div class="btn-group__menu navmenu navmenu--sm" role="menu" aria-label="Trade menu">
+            <a href="#" class="navmenu__item" role="menuitem"><span class="navmenu__label">Stocks &amp; ETFs</span><span class="navmenu__desc">Invest and trade shares</span></a>
+            <a href="#" class="navmenu__item" role="menuitem"><span class="navmenu__label">Crypto</span><span class="navmenu__desc">Trade cryptocurrencies</span></a>
+            <a href="#" class="navmenu__item" role="menuitem"><span class="navmenu__label">Copy Trading</span><span class="navmenu__desc">Copy expert trades</span></a>
           </div>
         </div>
       </nav>
-
-            <div class="nav__actions">
+      <div class="nav__actions">
         <div class="btn-group btn-group--nav">
           <span class="btn-group__trigger">
             <a href="signup.html" class="btn btn--gold nav-signup" id="navSignup">Get Started</a>
@@ -47,7 +69,9 @@
           </div>
         </div>
       </div>
-      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -88,6 +112,13 @@
   </main>
 
   <footer class="footer">
+        <div class="container footer__risk">
+      <h5>Risk Disclosure</h5>
+      <p>The risk of loss in trading stocks, options, futures, currencies, foreign equities, and fixed income can be substantial. Before you trade, please read the relevant risk disclosure statements on our <a href="risk.html">Warnings and Disclosures</a> page.</p>
+      <p>Trading on margin is only for experienced investors with a high risk tolerance. You may lose more than your initial investment. For additional information about margin loan rates, please see our <a href="risk.html">Margin Loan Rates</a>.</p>
+      <p>Security futures involve a high degree of risk and are not suitable for all investors. The amount you may lose may be greater than your initial investment. Before trading security futures, please read the <a href="risk.html">Security Futures Risk Disclosure Statement</a>.</p>
+      <p>Structured products and fixed income products such as bonds are complex products that carry additional risk and are not suitable for all investors. Before trading, please read the <a href="risk.html">Risk Warning and Disclosure Statement</a>.</p>
+    </div>
     <div class="container footer__bottom">
       <span>© <span id="year">2026</span> Global Trustfunds. All rights reserved.</span>
     </div>
