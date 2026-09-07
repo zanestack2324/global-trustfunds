@@ -264,6 +264,8 @@ input[type="submit"], input[type="button"] {
 
 .brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; text-decoration: none; }
 .brand__img { border-radius: 9px; height: auto; max-width: 100%; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+.nav .brand__img { height: 42px; width: auto; }
+.footer__brand .brand__img, .auth__side .brand__img { height: 42px; width: auto; }
 
 .nav__links { display: flex; align-items: center; flex: 1; justify-content: center; gap: 10px; }
 
